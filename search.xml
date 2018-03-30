@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Flask学习与Python进阶\_1]]></title>
+    <url>%2F2018%2F03%2F30%2FFlask%E5%AD%A6%E4%B9%A0%E4%B8%8EPython%E8%BF%9B%E9%98%B6_1%2F</url>
+    <content type="text"><![CDATA[Flask是基于Python的Web框架，我们主要通过学习Flask的基础知识来学习Python进阶知识。 使用pipenv 使用pipenv创建虚拟环境1pip install pipenv 在自己的项目目录下创建虚拟环境，这个虚拟环境和项目是绑定的1pipenv install 我执行上面的命令时报错了，好像是字符编码的问题，查询了一下，执行下面的2个命令就可以解决。12export LANG=en_US.UTF-8export LC_ALL=en_US.UTF-8 创建完虚拟环境后，我们需要的是启动虚拟环境1pipenv shell 这里虚拟环境的主要作用是区分开项目的环境，每个项目版本、使用的包可能都不一样，区分开来更加方便。 安装flask1pipenv install flask 退出虚拟环境1exit 查看包的依赖关系1pipenv graph 在虚拟环境下执行下面的命令，可以找到当前虚拟环境的目录1pipenv --venv 创建一个简单的Flask项目 下面是最简单的Flask代码，就是下面简单的代码，我们就能运行起我们的Web服务。123456from flask import Flaskapp = Flask(__name__) # 实例化Flask对象@app.route(&apos;/hello&apos;) # 定义一个视图函数def hello():return &quot;Hello, wsd&quot; app.run() # 启动web服务器 可以调试模式，修改代码就可以自动重启服务器，同时可以显示详细的异常信息1app.run(debug=True) 在介绍另一种路由注册方式，比较而言第一种更加方便。1234def hello():# 基于类的视图（即插视图）=\&gt; 不是重点return &quot;Hello, wsd&quot;app.add_url_rule(&apos;/hello&apos;, view_func=hello) 在这里有一个想问题，我们写Python代码时经常会写下面的代码：12if __name__ == '__main__': app.run(host='0.0.0.0', debug=app.config['DEBUG']()) # 启动web服务器 Quiz 这里为什么要写 if name == ‘main’呢？在一般的Python代码里，原因是确保if内的语句只在当前文件作为入口文件时执行，不会在其他模块导入时执行而在Flask项目中，除了上面的原因，还因为Python Web项目的生产环境一般为nginx + uwsgi, if下面的语句是启用了一个Flask自带的服务器，在生产环境下不会启动自带的服务器，如果没有if判断生产环境下就会执行下面的语句，就会启动flask默认的服务器]]></content>
+      <tags>
+        <tag>Flask</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[移动端访问我的博客]]></title>
     <url>%2F2018%2F03%2F30%2F%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[]]></content>
