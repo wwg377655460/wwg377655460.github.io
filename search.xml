@@ -1,21 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[Flask学习与Python进阶\_1]]></title>
-    <url>%2F2018%2F03%2F30%2FFlask%E5%AD%A6%E4%B9%A0%E4%B8%8EPython%E8%BF%9B%E9%98%B6_1%2F</url>
-    <content type="text"><![CDATA[Flask是基于Python的Web框架，我们主要通过学习Flask的基础知识来学习Python进阶知识。 使用pipenv 使用pipenv创建虚拟环境1pip install pipenv 在自己的项目目录下创建虚拟环境，这个虚拟环境和项目是绑定的1pipenv install 我执行上面的命令时报错了，好像是字符编码的问题，查询了一下，执行下面的2个命令就可以解决。12export LANG=en_US.UTF-8export LC_ALL=en_US.UTF-8 创建完虚拟环境后，我们需要的是启动虚拟环境1pipenv shell 这里虚拟环境的主要作用是区分开项目的环境，每个项目版本、使用的包可能都不一样，区分开来更加方便。 安装flask1pipenv install flask 退出虚拟环境1exit 查看包的依赖关系1pipenv graph 在虚拟环境下执行下面的命令，可以找到当前虚拟环境的目录1pipenv --venv 创建一个简单的Flask项目 下面是最简单的Flask代码，就是下面简单的代码，我们就能运行起我们的Web服务。123456from flask import Flaskapp = Flask(__name__) # 实例化Flask对象@app.route(&apos;/hello&apos;) # 定义一个视图函数def hello():return &quot;Hello, wsd&quot; app.run() # 启动web服务器 可以调试模式，修改代码就可以自动重启服务器，同时可以显示详细的异常信息1app.run(debug=True) 在介绍另一种路由注册方式，比较而言第一种更加方便。1234def hello():# 基于类的视图（即插视图）=\&gt; 不是重点return &quot;Hello, wsd&quot;app.add_url_rule(&apos;/hello&apos;, view_func=hello) 在这里有一个想问题，我们写Python代码时经常会写下面的代码：12if __name__ == '__main__': app.run(host='0.0.0.0', debug=app.config['DEBUG']()) # 启动web服务器 Quiz 这里为什么要写 if name == ‘main’呢？在一般的Python代码里，原因是确保if内的语句只在当前文件作为入口文件时执行，不会在其他模块导入时执行而在Flask项目中，除了上面的原因，还因为Python Web项目的生产环境一般为nginx + uwsgi, if下面的语句是启用了一个Flask自带的服务器，在生产环境下不会启动自带的服务器，如果没有if判断生产环境下就会执行下面的语句，就会启动flask默认的服务器]]></content>
-      <tags>
-        <tag>Flask</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[移动端访问我的博客]]></title>
-    <url>%2F2018%2F03%2F30%2F%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[一些想法]]></title>
-    <url>%2F2018%2F03%2F30%2F%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[写一些自己的想法 由于上了研究生，接触了很多深入的知识，也不可能仅仅停留在使用上了，在这个博客里，我会更新我的学习收获，大致的目录如下： 安全查询方面的内容和代码。 Flask框架核心与Python的使用。 英语学习的收获和感悟。 线性代数等数学知识的深入。 机器学习能知识。希望能不断完善自己的知识。]]></content>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title>Flask学习与Python进阶\_1</title>
+      <link href="/2018/03/30/Flask%E5%AD%A6%E4%B9%A0%E4%B8%8EPython%E8%BF%9B%E9%98%B6_1/"/>
+      <url>/2018/03/30/Flask%E5%AD%A6%E4%B9%A0%E4%B8%8EPython%E8%BF%9B%E9%98%B6_1/</url>
+      <content type="html"><![CDATA[<blockquote><p>Flask是基于Python的Web框架，我们主要通过学习Flask的基础知识来学习Python进阶知识。</p></blockquote><h2 id="使用pipenv"><a href="#使用pipenv" class="headerlink" title="使用pipenv"></a>使用pipenv</h2><blockquote><p> 使用pipenv创建虚拟环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pipenv</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p> 在自己的项目目录下创建虚拟环境，这个虚拟环境和项目是绑定的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install</span><br></pre></td></tr></table></figure></p></blockquote><p><strong>我执行上面的命令时报错了，好像是字符编码的问题，查询了一下，执行下面的2个命令就可以解决。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LANG=en_US.UTF-8</span><br><span class="line">export LC_ALL=en_US.UTF-8</span><br></pre></td></tr></table></figure></p><blockquote><p> 创建完虚拟环境后，我们需要的是启动虚拟环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv shell</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p> 这里虚拟环境的主要作用是区分开项目的环境，每个项目版本、使用的包可能都不一样，区分开来更加方便。<br> 安装flask<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install flask</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p> 退出虚拟环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p> 查看包的依赖关系<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv graph</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p> 在虚拟环境下执行下面的命令，可以找到当前虚拟环境的目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv --venv</span><br></pre></td></tr></table></figure></p></blockquote><h2 id="创建一个简单的Flask项目"><a href="#创建一个简单的Flask项目" class="headerlink" title="创建一个简单的Flask项目"></a>创建一个简单的Flask项目</h2><blockquote><p>下面是最简单的Flask代码，就是下面简单的代码，我们就能运行起我们的Web服务。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from flask import Flask</span><br><span class="line">app = Flask(__name__)  # 实例化Flask对象</span><br><span class="line">@app.route(&apos;/hello&apos;)  #  定义一个视图函数</span><br><span class="line">def hello():</span><br><span class="line">return &quot;Hello, wsd&quot;</span><br><span class="line"> app.run()  # 启动web服务器</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>可以调试模式，修改代码就可以自动重启服务器，同时可以显示详细的异常信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.run(debug=True)</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p> 在介绍另一种路由注册方式，比较而言第一种更加方便。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def hello():</span><br><span class="line"># 基于类的视图（即插视图）=\&gt; 不是重点</span><br><span class="line">return &quot;Hello, wsd&quot;</span><br><span class="line">app.add_url_rule(&apos;/hello&apos;, view_func=hello)</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>在这里有一个想问题，我们写Python代码时经常会写下面的代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>: </span><br><span class="line">app.run(host=<span class="string">'0.0.0.0'</span>, debug=app.config[<span class="string">'DEBUG'</span>]())  <span class="comment"># 启动web服务器</span></span><br></pre></td></tr></table></figure></p></blockquote><h2 id="Quiz"><a href="#Quiz" class="headerlink" title="Quiz"></a>Quiz</h2><blockquote><p>这里为什么要写<strong> if <strong>name</strong> == ‘<strong>main</strong>’</strong>呢？<br>在一般的Python代码里，原因是确保if内的语句只在当前文件作为入口文件时执行，不会在其他模块导入时执行<br>而在Flask项目中，除了上面的原因，还因为Python Web项目的生产环境一般为nginx + uwsgi, if下面的语句是启用了一个Flask自带的服务器，在生产环境下不会启动自带的服务器，如果没有if判断生产环境下就会执行下面的语句，就会启动flask默认的服务器</p></blockquote>]]></content>
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>移动端访问我的博客</title>
+      <link href="/2018/03/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2018/03/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%AE%BF%E9%97%AE%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<p><img src="/2018/03/30/移动端访问我的博客/url.png" alt="二维码"></p>]]></content>
+      
+      <categories>
+          
+          <category> 移动端访问 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>一些想法</title>
+      <link href="/2018/03/30/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/"/>
+      <url>/2018/03/30/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h3 id="写一些自己的想法"><a href="#写一些自己的想法" class="headerlink" title="写一些自己的想法"></a>写一些自己的想法</h3><blockquote><p>由于上了研究生，接触了很多深入的知识，也不可能仅仅停留在使用上了，在这个博客里，我会更新我的学习收获，大致的目录如下：</p><ol><li>安全查询方面的内容和代码。</li><li>Flask框架核心与Python的使用。</li><li>英语学习的收获和感悟。</li><li>线性代数等数学知识的深入。</li><li>机器学习能知识。<br>希望能不断完善自己的知识。</li></ol></blockquote>]]></content>
+      
+      <categories>
+          
+          <category> 想法 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>timeline</title>
+      <link href="/timeline/index.html"/>
+      <url>/timeline/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[<h3 id="写一些自己的想法"><a href="#写一些自己的想法" class="headerlink" title="写一些自己的想法"></a>写一些自己的想法</h3><blockquote><p>现在在西安读研究生，希望能总结下自己的学习内容。</p></blockquote><p><strong><br>可以访问我的邮箱:<a href="mailto:wwg377655460@126.com" target="_blank" rel="noopener">wwg377655460@126.com</a><br>QQ:377655460<br>希望可以多多交流。</strong></p>]]></content>
+    </entry>
+    
+  
 </search>
