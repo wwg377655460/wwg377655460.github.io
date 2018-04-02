@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Flask学习与Python进阶-3-进程与线程 | 
+        
+        Wsdevotion&#39;s Bolg
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body {
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Wsdevotion&#39;s Bolg">
+    <meta name="msapplication-starturl" content="http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-3-进程与线程/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Wsdevotion&#39;s Bolg">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-3-进程与线程/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Flask学习与Python进阶-3-进程与线程 | Wsdevotion&#39;s Bolg">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Mon Apr 02 2018 10:05:48 GMT+0800">
+        <meta property="article:modified_time" content="Mon Apr 02 2018 12:56:23 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-3-进程与线程/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-3-进程与线程/index.html",
+    "headline": "Flask学习与Python进阶-3-进程与线程",
+    "datePublished": "Mon Apr 02 2018 10:05:48 GMT+0800",
+    "dateModified": "Mon Apr 02 2018 12:56:23 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "wsdevotion",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "编程也是一种艺术"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wsdevotion&#39;s Bolg",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进程与线程"><span class="post-toc-number">1.</span> <span class="post-toc-text">进程与线程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是进程"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是进程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是线程"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">什么是线程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多线程"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">多线程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flask中的多线程"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Flask中的多线程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Flask如何做到多线程"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Flask如何做到多线程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Flask中的线程隔离栈：LocalStack"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">Flask中的线程隔离栈：LocalStack</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Flask使用线程隔离的意义"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">Flask使用线程隔离的意义</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Flask学习与Python进阶-3-进程与线程
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>wsdevotion</strong>
+        <span>4月 02, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADjUlEQVR42u3aS24jMQwFQN//0pltgCDt98hWxxiUVoFjq6Xygubn9WV9Wy8EOHDgwIEDBw4cOHB8MMcrXm82jT/18/XvryTPut6nvQsOHDhw4DjBMXvw9ZWuj7t5PT9V9CkcOHDgwHGM47eANLvq9eHayyQ7t3fBgQMHDhyfw5GHw/xZSdJ1/cXgwIEDB47/iSMpF17v1pYF8zQSBw4cOHD8FUcbIGeXz5Ox6DIlKA4cOHDgeIZjk0R92t+PznfgwIEDB44fHO1KmkNtitUWGWfv/3UfHDhw4MBxK0ceqNqkbnPovMw3Oz8OHDhw4DjH0Rbj2rGGPKDm17gr7cSBAwcOHCc42rDajjjM2kKzgbnZSB8OHDhw4DjBkQfd9ko5Wcuap3A4cODAgeN5jk2yNCvtJa2sTbGy+BmBAwcOHDhu5bgrWOatoJyg3TlBGc534MCBAweOmKNt1bSFws1ww12Iq1opDhw4cOAoOZIEbFbg2w8ctA2n/LM4cODAgeOvOJLw1g4itAMTM6bkxwQOHDhw4DjBMQt7s/fnWEmyN9sNBw4cOHA8zzEr6m3aRW3SdXPJEgcOHDhwHOCIGv+jgLohaMf48q8BBw4cOHA8w7EJsXmw3DScZgXBN2VHHDhw4MDxCEc+fNZeIA+B+/bYsDiIAwcOHDgWHPnRZ2s/MBGNu8X0b4qDOHDgwIHjJo7Zyot3bVGvDcCzAiIOHDhw4DjB0W6UDMztBw7akJ8ncjhw4MCB4zRHW0rbhNJ86KFtia2wcODAgQPHYY68vZQHuXyfTamxHZ7DgQMHDhzPcLRNo1kQTfZsr91+PThw4MCB4xmOfARhFibzZtVsTKFtXOHAgQMHjns5ZgRJOS85VhJiZ6XAIhjjwIEDB45HOPbBbzYSlxC3/31zEhw4cODAcYzjrtC4SdtWydisrIkDBw4cOA5zzMJeXkCcNb3aQmQxcocDBw4cOG7laFd+vetAnr8zT+Ha4iYOHDhw4DjB0bZzNoMLeRDNURLEOoXDgQMHDhxrjjZY5qW6r/WaJYfFl4EDBw4cOI5xbAqCs9ZREtTz57Y/F3DgwIEDx+dwrIpx5c4JzaywiAMHDhw4PpmjPW57gf26Yb4DBw4cOHCUHG15Lj90npLlwxBJYywZwsCBAwcOHCc48isVgwJxsyp/St7uyn8c4MCBAweOezksHDhw4MCBAwcOHDhwfNj6BzylZ3BPM769AAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Flask学习与Python进阶-3-进程与线程&url=http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-3-进程与线程/index.html&pic=http://wwg377655460.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Flask学习与Python进阶-3-进程与线程&url=http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-3-进程与线程/index.html&via=wsdevotion" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-3-进程与线程/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-3-进程与线程/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h1><h2 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h2><blockquote>
+<p> 进程是竞争计算机资源的基本单位，对于单核CPPU，同一时间永远只能执行一个应用程序，它会在不同的应用程序进程之间切换。</p>
+</blockquote>
+<h2 id="什么是线程"><a href="#什么是线程" class="headerlink" title="什么是线程"></a>什么是线程</h2><blockquote>
+<p> 线程是进程的一部分<br>1个进程 =&gt; 多个线程<br>CPU越来越强，我们需要更小的单元来管理CPU的资源。<br>线程 =&gt; 利用CPU执行代码，不能够拥有资源，但是可以访问资源（自己所在的进程）它的切换很快<br>进程 =&gt; 分配资源</p>
+</blockquote>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><blockquote>
+<p>  在Python中启动多线程<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">worker</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I am a thread"</span>)</span><br><span class="line">    t = threading.current_thread()</span><br><span class="line">    print(t.getName())</span><br><span class="line">print(<span class="string">"This is a test"</span>)</span><br><span class="line">t = threading.current_thread()</span><br><span class="line">print(t.getName())</span><br><span class="line">new_t = threading.Thread(target=worker, name=<span class="string">"New Thread"</span>)</span><br><span class="line">new_t.start()</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 上面代码执行的结果如下：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">This is <span class="selector-tag">a</span> test</span><br><span class="line">MainThread</span><br><span class="line">I am <span class="selector-tag">a</span> thread</span><br><span class="line">New Thread</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 多线程的编程是为了更加充分的利用CPU的性能优势<br> 但是Python<strong>不能</strong>充分的利用CPU的性能优势 :(<br> 原因是因为Python有一个GIL（全局解释器锁），它会让Python代码同一时刻只能在一个核上执行同一的线程，Python为什么要设计这样一个锁呢？<br>因为Python为了让代码更加简洁，在解释器的层面加了一个锁，不需要程序员编写细粒度的锁，但是这只是在一定程度上保证了线程安全。但是在一些特殊场合，比如<code>a+=1</code>，在Python解释器中可能会被翻译成多段bytecode，虽然有GIL，但是这多段bytecode不能保证不能中断。<br>值得注意的是Python的多线程在IO密集型程序中是非常有帮助的，因为GIL只是让CPU不能在同一时间执行多个线程，但是IO密集型程序大部分时间都在对数据查询上（需要等待），这部分完全可以并发执行，这时Python的多线程就非常有作用了。</p>
+</blockquote>
+<h2 id="Flask中的多线程"><a href="#Flask中的多线程" class="headerlink" title="Flask中的多线程"></a>Flask中的多线程</h2><h3 id="Flask如何做到多线程"><a href="#Flask如何做到多线程" class="headerlink" title="Flask如何做到多线程"></a>Flask如何做到多线程</h3><blockquote>
+<p>开启多线程<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, debug=app.config[<span class="string">'DEBUG'</span>], threaded=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>但是Flask如何同时处理多个请求呢？多线程？<br>Flask内部使用字典（Local对象 werkzeug的基础库）来储存多个线程（通过线程号）=&gt; 线程隔离<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    b = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">my_obj = A()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">worker</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 新线程</span></span><br><span class="line">    my_obj.b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">new_t = threading.Thread(target=worker, name=<span class="string">'New Thread'</span>)</span><br><span class="line">new_t.start()</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line">print(my_obj.b)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 上述代码输出结果为2，这里是因为对象A不是线程隔离的。<br>修改代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">my_obj = Local()</span><br><span class="line">my_obj.b = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">worker</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 新线程</span></span><br><span class="line">    my_obj.b = <span class="number">2</span></span><br><span class="line">    print(<span class="string">'in new thread b is:'</span> + str(my_obj.b))</span><br><span class="line"></span><br><span class="line">new_t = threading.Thread(target=worker, name=<span class="string">'New Thread'</span>)</span><br><span class="line">new_t.start()</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'in main thread b is:'</span> + str(my_obj.b))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>输出结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">in</span> new thread b <span class="keyword">is</span>:<span class="number">2</span></span><br><span class="line"><span class="keyword">in</span> main thread b <span class="keyword">is</span>:<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 这里的主线程中的b不会被其他线程修改，这是因为Local对象是线程隔离的，正如我们上面说的Local是通过线程号，使用字典来做到线程隔离的。</p>
+</blockquote>
+<blockquote>
+<p>Local源码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Local</span><span class="params">(object)</span>:</span></span><br><span class="line">    __slots__ = (<span class="string">'__storage__'</span>, <span class="string">'__ident_func__'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        object.__setattr__(self, <span class="string">'__storage__'</span>, &#123;&#125;)</span><br><span class="line">        object.__setattr__(self, <span class="string">'__ident_func__'</span>, get_ident)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> iter(self.__storage__.items())</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, proxy)</span>:</span></span><br><span class="line">        <span class="string">"""Create a proxy for a name."""</span></span><br><span class="line">        <span class="keyword">return</span> LocalProxy(self, proxy)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__release_local__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__storage__.pop(self.__ident_func__(), <span class="keyword">None</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getattr__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">return</span> self.__storage__[self.__ident_func__()][name]</span><br><span class="line">        <span class="keyword">except</span> KeyError:</span><br><span class="line">            <span class="keyword">raise</span> AttributeError(name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__setattr__</span><span class="params">(self, name, value)</span>:</span></span><br><span class="line">        ident = self.__ident_func__() <span class="comment"># 获取线程号</span></span><br><span class="line">        storage = self.__storage__</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            storage[ident][name] = value</span><br><span class="line">        <span class="keyword">except</span> KeyError:</span><br><span class="line">            storage[ident] = &#123;name: value&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__delattr__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">del</span> self.__storage__[self.__ident_func__()][name]</span><br><span class="line">        <span class="keyword">except</span> KeyError:</span><br><span class="line">            <span class="keyword">raise</span> AttributeError(name)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="Flask中的线程隔离栈：LocalStack"><a href="#Flask中的线程隔离栈：LocalStack" class="headerlink" title="Flask中的线程隔离栈：LocalStack"></a>Flask中的线程隔离栈：LocalStack</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LocalStack</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">        &gt;&gt;&gt; ls = LocalStack()</span><br><span class="line">        &gt;&gt;&gt; ls.push(<span class="number">42</span>)</span><br><span class="line">        &gt;&gt;&gt; ls.top</span><br><span class="line">        <span class="number">42</span></span><br><span class="line">        &gt;&gt;&gt; ls.push(<span class="number">23</span>)</span><br><span class="line">        &gt;&gt;&gt; ls.top</span><br><span class="line">        <span class="number">23</span></span><br><span class="line">        &gt;&gt;&gt; ls.pop()</span><br><span class="line">        <span class="number">23</span></span><br><span class="line">        &gt;&gt;&gt; ls.top</span><br><span class="line">        <span class="number">42</span></span><br><span class="line">    .. versionadded:: <span class="number">0.6</span><span class="number">.1</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    def __init__(self):</span></span><br><span class="line"><span class="string">        self._local = Local()</span></span><br><span class="line"><span class="string">    def __release_local__(self):</span></span><br><span class="line"><span class="string">        self._local.__release_local__()</span></span><br><span class="line"><span class="string">    def _get__ident_func__(self):</span></span><br><span class="line"><span class="string">        return self._local.__ident_func__</span></span><br><span class="line"><span class="string">    def _set__ident_func__(self, value):</span></span><br><span class="line"><span class="string">        object.__setattr__(self._local, '__ident_func__', value)</span></span><br><span class="line"><span class="string">    __ident_func__ = property(_get__ident_func__, _set__ident_func__)</span></span><br><span class="line"><span class="string">    del _get__ident_func__, _set__ident_func__</span></span><br><span class="line"><span class="string">    def __call__(self):</span></span><br><span class="line"><span class="string">        def _lookup():</span></span><br><span class="line"><span class="string">            rv = self.top</span></span><br><span class="line"><span class="string">            if rv is None:</span></span><br><span class="line"><span class="string">                raise RuntimeError('object unbound')</span></span><br><span class="line"><span class="string">            return rv</span></span><br><span class="line"><span class="string">        return LocalProxy(_lookup)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    def push(self, obj):</span></span><br><span class="line"><span class="string">        """</span>Pushes a new item to the stack<span class="string">"""</span></span><br><span class="line"><span class="string">        rv = getattr(self._local, 'stack', None)</span></span><br><span class="line"><span class="string">        if rv is None:</span></span><br><span class="line"><span class="string">            self._local.stack = rv = []</span></span><br><span class="line"><span class="string">        rv.append(obj)</span></span><br><span class="line"><span class="string">        return rv</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    def pop(self):</span></span><br><span class="line"><span class="string">        """</span>Removes the topmost item <span class="keyword">from</span> the stack, will <span class="keyword">return</span> the</span><br><span class="line">        old value <span class="keyword">or</span> `<span class="keyword">None</span>` <span class="keyword">if</span> the stack was already empty.</span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        stack = getattr(self._local, 'stack', None)</span></span><br><span class="line"><span class="string">        if stack is None:</span></span><br><span class="line"><span class="string">            return None</span></span><br><span class="line"><span class="string">        elif len(stack) == 1:</span></span><br><span class="line"><span class="string">            release_local(self._local)</span></span><br><span class="line"><span class="string">            return stack[-1]</span></span><br><span class="line"><span class="string">        else:</span></span><br><span class="line"><span class="string">            return stack.pop()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    @property</span></span><br><span class="line"><span class="string">    def top(self):</span></span><br><span class="line"><span class="string">        """</span>The topmost item on the stack.  If the stack <span class="keyword">is</span> empty,</span><br><span class="line">        `<span class="keyword">None</span>` <span class="keyword">is</span> returned.</span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        try:</span></span><br><span class="line"><span class="string">            return self._local.stack[-1]</span></span><br><span class="line"><span class="string">        except (AttributeError, IndexError):</span></span><br><span class="line"><span class="string">            return None</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> LocalStack为我们封装了push(), pop(), top()三个函数，实现了线程隔离栈<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">my_statck = LocalStack()</span><br><span class="line">my_statck.push(<span class="number">1</span>)</span><br><span class="line">print(<span class="string">'in main after push, value is:'</span> + str(my_statck.top))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">worker</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 新线程</span></span><br><span class="line">    print(<span class="string">'in new thread before push, value is:'</span> + str(my_statck.top))</span><br><span class="line">    my_statck.push(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">'in new thread after push, value is:'</span> + str(my_statck.top))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">new_t = threading.Thread(target=worker, name=<span class="string">'New Thread'</span>)</span><br><span class="line">new_t.start()</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 主线程</span></span><br><span class="line">print(<span class="string">'finally, in main thread value is:'</span> + str(my_statck.top))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 上述代码执行结果为：<br><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">in</span> main after push, <span class="keyword">value</span> <span class="keyword">is</span>:<span class="number">1</span></span><br><span class="line"><span class="keyword">in</span> <span class="keyword">new</span> thread before push, <span class="keyword">value</span> <span class="keyword">is</span>:None</span><br><span class="line"><span class="keyword">in</span> <span class="keyword">new</span> thread after push, <span class="keyword">value</span> <span class="keyword">is</span>:<span class="number">2</span></span><br><span class="line"><span class="keyword">finally</span>, <span class="keyword">in</span> main thread <span class="keyword">value</span> <span class="keyword">is</span>:<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 可以看出LocalStack是线程隔离的。<br>Flask使用LocalStack隔离的是AppContext和Request Context(Request对象包含在上下文中)，Flask需要用一个变量名指向多个线程创建的多个变量</p>
+</blockquote>
+<h3 id="Flask使用线程隔离的意义"><a href="#Flask使用线程隔离的意义" class="headerlink" title="Flask使用线程隔离的意义"></a>Flask使用线程隔离的意义</h3><blockquote>
+<p>Flask使用线程隔离的意义在于：<strong>使当前线程能正确引用到他自己所创建的对象，而不是引用到其他线程所创建的对象。</strong><br>需要注意Flask中的核心对象app只有一个，他是在入口文件中创建的，只会被创建一次，每一个进程使用的都是同一个地址，同一个app对象。所以这里app可以用来让所有请求共享同一份数据（网站访问计数），但是这是不推荐的（线程安全问题）。<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 以线程ID号作为<span class="function"><span class="title">key</span>的字典 -&gt;</span> L<span class="function"><span class="title">ocal</span> -&gt;</span> LocalStock</span><br><span class="line"></span><br><span class="line"># A<span class="function"><span class="title">ppContext</span> RequestContext -&gt;</span> LocalStack</span><br><span class="line"></span><br><span class="line"># F<span class="function"><span class="title">lask</span> -&gt;</span> A<span class="function"><span class="title">ppContext</span>        Request -&gt;</span> RequestContext</span><br><span class="line"></span><br><span class="line"># <span class="function"><span class="title">current_app</span> -&gt;</span> (LocalStack.top = AppContext   top.app = Flask 只有一个)</span><br><span class="line"></span><br><span class="line"># <span class="function"><span class="title">request</span> -&gt;</span> (LocalStack.top = RequestContext   top.request = Request 多个)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/04/02/configs/sorts/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/02/Flask学习与Python进阶-2-With语句详解/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="wsdevotion's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        wwg377655460@126.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/想法/">想法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端访问/">移动端访问<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">6</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/wsdevotion" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Wsdevotion's Bolg
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+<script type="text/ls-javascript" id="Bing-Background-script">
+    queue.offer(function(){
+        $('body').attr('data-original', 'https://api.i-meto.com/bing?');
+    });
+</script>
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
