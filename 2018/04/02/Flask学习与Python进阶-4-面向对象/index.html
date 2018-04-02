@@ -43,7 +43,7 @@
     
     <title>
         
-            categories | 
+            Flask学习与Python进阶-4-面向对象 | 
         
         Wsdevotion&#39;s Bolg
     </title>
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Wsdevotion&#39;s Bolg">
-    <meta name="msapplication-starturl" content="http://wwg377655460.github.io/categories/">
+    <meta name="msapplication-starturl" content="http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-4-面向对象/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Wsdevotion&#39;s Bolg">
@@ -230,13 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://wwg377655460.github.io/categories/">
+    <meta property="og:url" content="http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-4-面向对象/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="categories | Wsdevotion&#39;s Bolg">
+    <meta property="og:title" content="Flask学习与Python进阶-4-面向对象 | Wsdevotion&#39;s Bolg">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     
 
+    
+        <meta property="article:published_time" content="Mon Apr 02 2018 15:05:51 GMT+0800">
+        <meta property="article:modified_time" content="Mon Apr 02 2018 16:32:59 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -244,13 +247,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://wwg377655460.github.io/categories/index.html" />
+        <link rel="canonical" href="http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-4-面向对象/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-4-面向对象/index.html",
+    "headline": "Flask学习与Python进阶-4-面向对象",
+    "datePublished": "Mon Apr 02 2018 15:05:51 GMT+0800",
+    "dateModified": "Mon Apr 02 2018 16:32:59 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "wsdevotion",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "编程也是一种艺术"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wsdevotion&#39;s Bolg",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -286,6 +319,39 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#面向对象-amp-伪面向对象"><span class="post-toc-number">1.</span> <span class="post-toc-text">面向对象&amp;伪面向对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原始代码一"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">原始代码一</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重构一"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">重构一</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原始代码二"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">原始代码二</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重构二"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">重构二</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Tips"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">Tips</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
@@ -312,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                categories
+                Flask学习与Python进阶-4-面向对象
             </p>
         </div>
 
@@ -331,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>wsdevotion</strong>
-        <span>3月 31, 2018</span>
+        <span>4月 02, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -353,7 +419,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYUlEQVR42u3aQW7DMAwEwPz/0+0Dihi7lKw4xegUFI7D8cFkSb5+/vV54eHh4eHh4eHhPYz3is/fb9U/XP7WMDY8PDy8I7wkrBXM3/tch7gSGx4eHt5J3vUL+l3Q7655+/Oj9JPEhoeHh/dk3ixtJAmgTSR4eHh438KbnSQ9PCjv4eHh4W1qRqw3F1bK8dt7LXh4eHgxrx1Knfx8dL6Hh4eHF/BmY61Z8shTyLalKzw8PLwbePmLOFkRaIvmfPmgiAcPDw/vAbxZenjXgGjXUpO74eHh4Z3n5WOq9u97H9N1OxgPDw/vDK8dX7UJIGfvamHg4eHhneHNXsorgSYNiCQJ4eHh4Z3nzRZG82TQPrjronnDZgQeHh7eMi9pCuRN1br8DR5ZXfrj4eHh3cxrV6BmKaQdtrUrqnh4eHgnefnt2nF+XmrPyutodQAPDw/vBt5s6SpvBK+0GPKEgYeHh/cp3mwclTcU2tWrtmTHw8PDO8Nr2w2zpkMb9Cwl4OHh4Z3htaOm5PoEkz+OutGMh4eHd5DXlrazBYL8weXJCQ8PD+9TvNlNZ02HZKg2TFF4eHh4B3lt6dwGkV9/43wPDw8P7zZe2yyYpYTZAsHmZgQeHh5eyWtPXv7ubdQWBT0eHh7ezbxXfFaaBbOE0a694uHh4Z3k5clgfXCVP7hhCxgPDw/vIG/9FZ+/vvMYNi9d4eHh4X2Ul4/B2tDbURkeHh7ed/FWEkO+KFD8A4CHh4d3kDcbeuXfui7Bd60R4OHh4Z3hzYrdPCWst3rzJIGHh4d3N+//HTw8PDw8PDw8vAecX3ZlFhH/IvvSAAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADm0lEQVR42u3aSW4jMRAEQP3/0zPXAQTJmVWkJWCCJwO9iIw+lGt5/LH+WQ8EOHDgwIEDBw4cOHB8MccjXi9f9+LO/J2Pcj0/tTkLDhw4cOC4wfFDKHr6yeRqcuf+ns1ZcODAgQPHbY73Ie1VcE22ngTs/KnkAxRnwYEDBw4cX8CREyTJFQ4cOHDg+J85ZilWVKSLg3S+Txw4cODA8VmOvKDWlg6Tct4+LfxArRQHDhw4cKwHGr7/71+d78CBAwcOHE8c+zUr4eUBOCk7rvaPAwcOHDiOcrTBLG8LtfdsiKNU7RUxDhw4cOC4xpGHtASrfWp2pAMfBgcOHDhwHOXIS2xtw2mWyL3/xZYpCsk4cODAgeMoxyagJs2edhChZUo+W10cxIEDBw4clzmScJtjDUt48UB2nl7iwIEDB457HPshhhwxeepUiTD6nDhw4MCB4yjHZhRg0xCaFSLbvUWlRhw4cODAcZRjc4w86WpbSklidmywGwcOHDhwXONo07C82ZMfafPrs+YTDhw4cOA4yzEbNUhCbF5MzAuFCVz78XDgwIEDx1mOvDm0D7r5WN6smZS/DQcOHDhw3ONIErl2+GBfvGtH32bFShw4cODAcYMjSYfaUJpcbQfgZinlanIQBw4cOHAsOPJw1ZYC2/fn6WK+k2FGiwMHDhw4Rhxt2W4WDjfDEHkRM/93AQcOHDhw3ONoQ9d7gnwrs1G5dvAiGuPDgQMHDhxHOTZHzYuAe+6zbS0cOHDgwHGPYzYSl6dz7Z05xzCsbgYacODAgQNHyZGE3ry1k6DkEO0O8xYaDhw4cOC4wbFJgWZtqnYPs9A7TOFw4MCBA8eCIw9U95KuPdlm4A8HDhw4cNzjiEpp8VBCmxC24XmGW0wO4sCBAweOEUc7oLZJ2NoWURvOk/0cGGjAgQMHDhxlCte2dooGTzA2nV+dPYUDBw4cOG5z5IW5PKzWSVRcOsyLhsXecODAgQPHUY6zSVQesPNwmIfS4aADDhw4cOA4yvGIV96smhG0Bb5ZyRIHDhw4cPwOR36YzbhDm7DtBx0OZLQ4cODAgWPB0Q6xrcYI4kGHTXEwKn3iwIEDB46PcuQFu3ZIIi/57RtdOHDgwIHjezg25cIW+v0bkqLhsO2EAwcOHDgOcbTFwWQrSRhOErD8kO2nwoEDBw4cNzjabW3CZxvO82GIpCx4eL4DBw4cOHA8cVg4cODAgQMHDhw4cOD4svUXnNKgYdBtjWAAAAAASUVORK5CYII=">
     
 </ul>
 
@@ -375,7 +441,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=categories&url=http://wwg377655460.github.io/categories/index.html&pic=http://wwg377655460.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Flask学习与Python进阶-4-面向对象&url=http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-4-面向对象/index.html&pic=http://wwg377655460.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -384,7 +450,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=categories&url=http://wwg377655460.github.io/categories/index.html&via=wsdevotion" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Flask学习与Python进阶-4-面向对象&url=http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-4-面向对象/index.html&via=wsdevotion" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -393,7 +459,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wwg377655460.github.io/categories/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-4-面向对象/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -402,7 +468,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://wwg377655460.github.io/categories/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://wwg377655460.github.io/2018/04/02/Flask学习与Python进阶-4-面向对象/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -427,7 +493,26 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <h1 id="面向对象-amp-伪面向对象"><a href="#面向对象-amp-伪面向对象" class="headerlink" title="面向对象&amp;伪面向对象"></a>面向对象&amp;伪面向对象</h1><blockquote>
+<p> <strong>不是我们写了class就是面向对象了，如果一个类中大部分函数可以使用@classmethod, @staticmethod来修饰就是伪面向对象。</strong></p>
+</blockquote>
+<h3 id="原始代码一"><a href="#原始代码一" class="headerlink" title="原始代码一"></a>原始代码一</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">YuShuBook</span>:</span></span><br><span class="line">    isbn_url = <span class="string">'http://t.yushu.im/v2/book/isbn/&#123;&#125;'</span></span><br><span class="line">    keyword_url = <span class="string">'http://t.yushu.im/v2/book/search?q=&#123;&#125;&amp;count=&#123;&#125;&amp;start=&#123;&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search_by_isbn</span><span class="params">(cls, isbn)</span>:</span></span><br><span class="line">        url = cls.isbn_url.format(isbn)</span><br><span class="line">        result = HTTP.get(url)</span><br><span class="line">        <span class="comment"># dict</span></span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search_by_keyword</span><span class="params">(cls, keyword, page=<span class="number">1</span>)</span>:</span></span><br><span class="line">        url = cls.keyword_url.format(keyword, current_app.config[<span class="string">'PER_PAGE'</span>], cls.calculate_start(page))</span><br><span class="line">        result = HTTP.get(url)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_start</span><span class="params">(page)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> (page - <span class="number">1</span>) * current_app.config[<span class="string">'PER_PAGE'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="重构一"><a href="#重构一" class="headerlink" title="重构一"></a>重构一</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">YuShuBook</span>:</span></span><br><span class="line">    isbn_url = <span class="string">'http://t.yushu.im/v2/book/isbn/&#123;&#125;'</span></span><br><span class="line">    keyword_url = <span class="string">'http://t.yushu.im/v2/book/search?q=&#123;&#125;&amp;count=&#123;&#125;&amp;start=&#123;&#125;'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.total = <span class="number">0</span></span><br><span class="line">        self.books = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search_by_isbn</span><span class="params">(self, isbn)</span>:</span></span><br><span class="line">        url = self.isbn_url.format(isbn)</span><br><span class="line">        result = HTTP.get(url)</span><br><span class="line">        self.__fill_single(result)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__fill_single</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> data:</span><br><span class="line">            self.total = <span class="number">1</span></span><br><span class="line">            self.books.append(data)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search_by_keyword</span><span class="params">(self, keyword, page=<span class="number">1</span>)</span>:</span></span><br><span class="line">        url = self.keyword_url.format(keyword, current_app.config[<span class="string">'PER_PAGE'</span>], self.calculate_start(page))</span><br><span class="line">        result = HTTP.get(url)</span><br><span class="line">        self.__fill_collection(result)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__fill_collection</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        self.total = data[<span class="string">'total'</span>]</span><br><span class="line">        self.books = data[<span class="string">'books'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_start</span><span class="params">(self, page)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> (page - <span class="number">1</span>) * current_app.config[<span class="string">'PER_PAGE'</span>]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> <strong>再来一个</strong></p>
+</blockquote>
+<h3 id="原始代码二"><a href="#原始代码二" class="headerlink" title="原始代码二"></a>原始代码二</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookViewModel</span>:</span></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">package_single</span><span class="params">(cls, data, keyword)</span>:</span></span><br><span class="line">        returned = &#123;</span><br><span class="line">            <span class="string">'books'</span>: [],</span><br><span class="line">            <span class="string">'total'</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="string">'keyword'</span>: keyword</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> data:</span><br><span class="line">            returned[<span class="string">'total'</span>] = <span class="number">1</span></span><br><span class="line">            returned[<span class="string">'books'</span>] = [cls.__cut_book_data(data)]</span><br><span class="line">        <span class="keyword">return</span> returned</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">package_collection</span><span class="params">(cls, data, keyword)</span>:</span></span><br><span class="line">        returned = &#123;</span><br><span class="line">            <span class="string">'books'</span>: [],</span><br><span class="line">            <span class="string">'total'</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="string">'keyword'</span>: keyword</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> data:</span><br><span class="line">            returned[<span class="string">'total'</span>] = data[<span class="string">'total'</span>]</span><br><span class="line">            returned[<span class="string">'books'</span>] = [cls.__cut_book_data(book) <span class="keyword">for</span> book <span class="keyword">in</span> data[<span class="string">'books'</span>]]</span><br><span class="line">        <span class="keyword">return</span> returned</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__cut_book_data</span><span class="params">(cls, data)</span>:</span></span><br><span class="line">        book = &#123;</span><br><span class="line">            <span class="string">'title'</span>: data[<span class="string">'title'</span>],</span><br><span class="line">            <span class="string">'publisher'</span>: data[<span class="string">'publisher'</span>],</span><br><span class="line">            <span class="string">'pages'</span>: data[<span class="string">'pages'</span>] <span class="keyword">or</span> <span class="string">''</span>,</span><br><span class="line">            <span class="string">'author'</span>: <span class="string">'、'</span>.join(data[<span class="string">'author'</span>]),</span><br><span class="line">            <span class="string">'price'</span>: data[<span class="string">'price'</span>],</span><br><span class="line">            <span class="string">'summary'</span>: data[<span class="string">'summary'</span>] <span class="keyword">or</span> <span class="string">''</span>,</span><br><span class="line">            <span class="string">'image'</span>: data[<span class="string">'image'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> book</span><br></pre></td></tr></table></figure>
+<h3 id="重构二"><a href="#重构二" class="headerlink" title="重构二"></a>重构二</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookViewModel</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, book)</span>:</span></span><br><span class="line">        self.title = book[<span class="string">'publisher'</span>]</span><br><span class="line">        self.publisher = book[<span class="string">'publisher'</span>],</span><br><span class="line">        self.pages = book[<span class="string">'pages'</span>] <span class="keyword">or</span> <span class="string">''</span>,</span><br><span class="line">        self.author = <span class="string">'、'</span>.join(book[<span class="string">'author'</span>]),</span><br><span class="line">        self.price = book[<span class="string">'price'</span>],</span><br><span class="line">        self.summary = book[<span class="string">'summary'</span>] <span class="keyword">or</span> <span class="string">''</span>,</span><br><span class="line">        self.image = book[<span class="string">'image'</span>]</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookCollection</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.total = <span class="number">0</span></span><br><span class="line">        self.books = []</span><br><span class="line">        self.keyword = <span class="string">''</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fill</span><span class="params">(self, yushu_book, keyword)</span>:</span></span><br><span class="line">        self.total = yushu_book.total</span><br><span class="line">        self.keyword = keyword</span><br><span class="line">        self.books = [BookViewModel(book) <span class="keyword">for</span> book <span class="keyword">in</span> yushu_book.books]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> 我们来总结下如何写出面向对象的代码，我的想法是要明白类的职责，类应该有的数据和函数就要放在类中，不应该有的不要保存，将具体的处理细节封装起来，比如上面两个代码的重构，我们将数据通过<strong><strong>init</strong></strong>封装在了类中，不再返回，这里数据属于类，我使用数据时，直接使用类的对象就行了。</p>
+</blockquote>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><blockquote>
+<p> 特别注意，一般我们需要把我们的对象序列化，但是对象中可能包含其他对象，不能直接使用json.dumps()，解决方法如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> json.dumps(books, default=<span class="keyword">lambda</span> o: o.__dict__)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 这里json.dumps()在序列化books时不知道如何处理时就会调用<strong>default</strong>中的函数，这种转移代码解释权的编程思想值得学习。</p>
+</blockquote>
+
         
     
 
@@ -447,11 +532,27 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2018/04/02/configs/sorts/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/04/02/Flask学习与Python进阶-3-进程与线程/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -629,6 +730,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
