@@ -81,11 +81,6 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
-            
-                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-            
-        
 
     
 
@@ -499,33 +494,15 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h3 id="Python中With的用法"><a href="#Python中With的用法" class="headerlink" title="Python中With的用法"></a>Python中With的用法</h3><blockquote>
-<p>在编写Python代码，需要链接数据库或打开文件时，我经常会使用<strong>with</strong></p>
-<pre><code class="python">with open(…):
-    pass
-</code></pre>
-<p>它会帮助我们安全的关闭链接，但我不知道它的工作原理，下面让我们来仔细分析一下。<br>我们先展示一段代码：</p>
-<pre><code class="python">class MyResource:
-    def __enter__(self):
-        print(&#39;connect to resource&#39;)
-        return self
-    def __exit__(self, exc_type, exc_val, exc_tb): 
-        if exc_tb:
-            print(&#39;process exception&#39;)
-        else:
-            print(&#39;no exception&#39;)
-            print(&#39;close resource connection&#39;)
-        return True 
-    def query(self):
-        print(&#39;query data&#39;)
-with MyResource() as resource:
-resource.query()
-</code></pre>
-<p>上面代码执行的结果如下：</p>
-<pre><code class="python">connect to resource
-query data
-no exception
-close resource connection
-</code></pre>
+<p>在编写Python代码，需要链接数据库或打开文件时，我经常会使用<strong>with</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(…):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>它会帮助我们安全的关闭链接，但我不知道它的工作原理，下面让我们来仔细分析一下。<br>我们先展示一段代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyResource</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__enter__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'connect to resource'</span>)</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__exit__</span><span class="params">(self, exc_type, exc_val, exc_tb)</span>:</span> </span><br><span class="line">        <span class="keyword">if</span> exc_tb:</span><br><span class="line">            print(<span class="string">'process exception'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">'no exception'</span>)</span><br><span class="line">            print(<span class="string">'close resource connection'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">query</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'query data'</span>)</span><br><span class="line"><span class="keyword">with</span> MyResource() <span class="keyword">as</span> resource:</span><br><span class="line">resource.query()</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>上面代码执行的结果如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">connect to resource</span><br><span class="line">query data</span><br><span class="line">no exception</span><br><span class="line">close resource connection</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
 <p>由执行的结果我们知道<strong>with</strong>语句的执行顺序</p>
 <ol>
 <li>会首先调用类的<strong><strong>enter</strong></strong>方法，并将<strong> <strong>enter</strong></strong>返回的值赋给<strong> as</strong>后的对象</li>
@@ -534,16 +511,11 @@ close resource connection
 </ol>
 </blockquote>
 <blockquote>
-<p>我们发现<strong> <strong>exit</strong></strong>函数有3个参数，我们来分析一下这几个参数的作用，我们修改部分代码如下：</p>
-<pre><code class="python">with MyResource() as resource:
-     1 / 0
-     resource.query()
-</code></pre>
-<p>执行得到下面的结果：</p>
-<pre><code>connect to resource
-process exception
-close resource connection
-</code></pre></blockquote>
+<p>我们发现<strong> <strong>exit</strong></strong>函数有3个参数，我们来分析一下这几个参数的作用，我们修改部分代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> MyResource() <span class="keyword">as</span> resource:</span><br><span class="line">     <span class="number">1</span> / <span class="number">0</span></span><br><span class="line">     resource.query()</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>执行得到下面的结果：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">connect <span class="keyword">to</span> resource</span><br><span class="line">process exception</span><br><span class="line">close<span class="built_in"> resource </span>connection</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 <blockquote>
 <p>显然这三个参数保存的是异常信息，我们可以在<strong> <strong>exit</strong></strong>中处理<strong>with</strong>中的异常信息。<br><strong>值得注意的是 <strong>exit</strong>的返回值，返回False，会继续在with外部抛出异常，返回True，不会继续在with外部抛出异常，什么都不返回相当于返回False。</strong></p>
 </blockquote>
@@ -900,12 +872,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
-    
-        
-            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
-        
-    
-
 
 
 <!-- Window Load -->
@@ -916,13 +882,6 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
-    
-        
-            $(function() {
-                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-                prettyPrint();
-                })
-        
     
     
 </script>
