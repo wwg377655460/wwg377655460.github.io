@@ -43,7 +43,7 @@
     
     <title>
         
-            Flask学习与Python进阶-1-基础知识 | 
+            Flask学习与Python进阶-5-用户管理 | 
         
         Wsdevotion&#39;s Bolg
     </title>
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Wsdevotion&#39;s Bolg">
-    <meta name="msapplication-starturl" content="http://wwg377655460.github.io/2018/03/30/Flask学习与Python进阶_1/">
+    <meta name="msapplication-starturl" content="http://wwg377655460.github.io/2018/04/11/Flask学习与Python进阶-5-用户管理/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Wsdevotion&#39;s Bolg">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://wwg377655460.github.io/2018/03/30/Flask学习与Python进阶_1/">
+    <meta property="og:url" content="http://wwg377655460.github.io/2018/04/11/Flask学习与Python进阶-5-用户管理/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Flask学习与Python进阶-1-基础知识 | Wsdevotion&#39;s Bolg">
+    <meta property="og:title" content="Flask学习与Python进阶-5-用户管理 | Wsdevotion&#39;s Bolg">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Fri Mar 30 2018 20:13:17 GMT+0800">
-        <meta property="article:modified_time" content="Sun Apr 08 2018 21:16:00 GMT+0800">
+        <meta property="article:published_time" content="Wed Apr 11 2018 21:25:15 GMT+0800">
+        <meta property="article:modified_time" content="Wed Apr 11 2018 22:12:52 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://wwg377655460.github.io/2018/03/30/Flask学习与Python进阶_1/index.html" />
+        <link rel="canonical" href="http://wwg377655460.github.io/2018/04/11/Flask学习与Python进阶-5-用户管理/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://wwg377655460.github.io/2018/03/30/Flask学习与Python进阶_1/index.html",
-    "headline": "Flask学习与Python进阶-1-基础知识",
-    "datePublished": "Fri Mar 30 2018 20:13:17 GMT+0800",
-    "dateModified": "Sun Apr 08 2018 21:16:00 GMT+0800",
+    "mainEntityOfPage": "http://wwg377655460.github.io/2018/04/11/Flask学习与Python进阶-5-用户管理/index.html",
+    "headline": "Flask学习与Python进阶-5-用户管理",
+    "datePublished": "Wed Apr 11 2018 21:25:15 GMT+0800",
+    "dateModified": "Wed Apr 11 2018 22:12:52 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "wsdevotion",
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用pipenv"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用pipenv</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Flask中的用户管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">Flask中的用户管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户模型的定义"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用户模型的定义</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两个password函数"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">两个password函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#check-password函数"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">check_password函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UserMixin"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">UserMixin</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#超级强大的用户权限管理插件flask-login"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">超级强大的用户权限管理插件flask_login</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本配置"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">基本配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本使用"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">基本使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#限制未登录的用户访问"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">限制未登录的用户访问</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#表单验证"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">表单验证</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表单模型的构建"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">表单模型的构建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单的使用"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">简单的使用</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -378,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                Flask学习与Python进阶-1-基础知识
+                Flask学习与Python进阶-5-用户管理
             </p>
         </div>
 
@@ -397,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>wsdevotion</strong>
-        <span>3月 30, 2018</span>
+        <span>4月 11, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -419,7 +419,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzElEQVR42u3aUVLkMAwE0Ln/peEAMElLMlTGfv7agpD4+Ufrll5fR64XNjY2NjY2NjY29iPZr3glf/XzmfwrN5suvu2X/WBjY2Nvzc4/mR/Zu+2+e8M1b75nbGxs7BPYq7a+qozl+7l+BhsbGxs7KSo3xSMucskXsbGxsbH/ooBdbzGJkPLDxcbGxsaeBDT588kBzYOnf8rSsLGxsR/PzuOe5/z7X/vb2NjY2A9mV1e1+TovTvlYz83OsbGxsTdl54Vh7TH1WsKTfWJjY2Pvyu6Vn0nbdd486EVO2NjY2Kexq+M1+RvyUrdqWBMbGxsbO9/c5PqR/KQXZmFjY2PvzU4uAAmyV4oK5ae1sLGxsU9j57HOJLKvhk158SuEStjY2NgbsXv/3Z/H/XmYVX2mGSphY2Njb83uNXTzA+21mfPrEzY2NvYJ7PyS0Gvl5rF+frHJB4OwsbGx92ZXA6BVLeHekGV+QOUsDRsbG3sjdm/8sXeZqR5QfgkZNXqxsbGxP4qdFKF5/FQth70LUvkGho2Njb0Fuzd2kxSe5MnJb8tNZWxsbOyt2ZO4Z15aeuUteSc2Njb2OexeoF/9ebUNXF2FkR1sbGzs7djzorWqUFVbzoVwChsbG/sAdv7qPNaP4p5iiapeYLCxsbGxV1GrJWcyvoONjY19GnvUQA0atNW4f3LhGWVp2NjY2B/O7oVN1YLUO+LJ0A82Njb2mez8Y71C2Ct11XYvNjY29gns6uqFO72gfxI53YRK2NjY2Buxe03WvDHcu+rMo6vyyA42Njb2h7N7n0yerx5xeRAnPj5sbGzsE9i9AKjaMMhHf6oltlnAsLGxsQ9mzzeah0S9tgQ2NjY2dj4c0wv3qy2H/CKEjY2NfSY7D4kSxvXfVktaHlFFIzvY2NjY27EnwX1yQL1LyPUeFoRK2NjY2Fuwz1nY2NjY2NjY2NjYj1nfiZUVR7IyxqMAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADh0lEQVR42u3aQW7cQAwEQP//08k1gOPdbnJGWQSlk2DI0qh04JLTX78cfxxfCHDgwIEDBw4cOHDg+GCOr/hI/usvD3t55ffz5G7fz1fvggMHDhw4LnC8KUU/PDhZ6E8Eyd8TvgPvggMHDhw4rnG0i3h9ZVsCZ9ybd8GBAwcOHJ/D8bp9ikZyAUS7Ehw4cODA8f9xJC/fDgT3lDhw4MCB419xJAO1fNH3Wr7N2nDgwIEDxzMc+fDu888fzXfgwIEDB45vHO2RlMZ90GHzxPqNcODAgQPHUY42rNYCnW382hBetH4cOHDgwHGUI9/aebN5c6igJq8xazt/vBsOHDhw4DjKcS/Q0IYe8mLZnr9ZOQ4cOHDguMAxW2jetuWxtrZ4zzbMcODAgQPHPY6kbcvHcHnb1gYU8o+XrB8HDhw4cDzDkTRaebyg3f5pC3bLjQMHDhw4/hXHsFzFrVRbjKM2LG4C3wwHceDAgQPHIY58i6gdI85ar03EoabEgQMHDhxHOfJS1zZjRRMVLH02akx+KODAgQMHjrMcZyMLm2VtYhCbD4kDBw4cOG5w5DfdxA7yAMSsRcxZceDAgQPHMxz5+O9sw5YU5nZoWHwkHDhw4MBxgaMtbO0LzK7Pi2v7RBw4cODA8QxHEjhox3N73FMBiOGsFAcOHDhwrHuWNuKwafZyuFkEfDgcxIEDBw4cC472lWaR6PwOs+2o2YfBgQMHDhw3OJJBWzuS29zzNUq+4VQ8CwcOHDhwXODIS1eyrE2j1XK3WHVHiwMHDhw4So6k4OVxtLww57HvUyGJaNsJBw4cOHCsOZLSmA/4WtB8tJcHKdotLhw4cODAcZYjL375cHAWmM65z25c4cCBAweOZzj2EYcEZR+by+FWhRYHDhw4cIw42vZpFms4RZCv7U1hxoEDBw4c1zhmw75NCdwPAWd3xoEDBw4cT3LkQYfZQHATkmg/T/RTAAcOHDhwHOVoj3yhSbHcf4wDETocOHDgwHGUo23ANm1YS5A3k7MfBzhw4MCB4x7HqW2n2WivLaWv75lsQeHAgQMHjmc4ZqGBvGHbFNfZcDCCw4EDBw4cH8OxL7fJcvcDx9UuHA4cOHDgeISjjSmcpZwdOHDgwIHjeY48xLAphC3fbESYbFzhwIEDB457HHmhSorl5srNVlMLgQMHDhw4bnA4cODAgQMHDhw4cODA8WHHb2mFfIXLM/NsAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -441,7 +441,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Flask学习与Python进阶-1-基础知识&url=http://wwg377655460.github.io/2018/03/30/Flask学习与Python进阶_1/index.html&pic=http://wwg377655460.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Flask学习与Python进阶-5-用户管理&url=http://wwg377655460.github.io/2018/04/11/Flask学习与Python进阶-5-用户管理/index.html&pic=http://wwg377655460.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Flask学习与Python进阶-1-基础知识&url=http://wwg377655460.github.io/2018/03/30/Flask学习与Python进阶_1/index.html&via=wsdevotion" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Flask学习与Python进阶-5-用户管理&url=http://wwg377655460.github.io/2018/04/11/Flask学习与Python进阶-5-用户管理/index.html&via=wsdevotion" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wwg377655460.github.io/2018/03/30/Flask学习与Python进阶_1/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wwg377655460.github.io/2018/04/11/Flask学习与Python进阶-5-用户管理/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -468,7 +468,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://wwg377655460.github.io/2018/03/30/Flask学习与Python进阶_1/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://wwg377655460.github.io/2018/04/11/Flask学习与Python进阶-5-用户管理/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -493,45 +493,49 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <blockquote>
-<p>Flask是基于Python的Web框架，我们主要通过学习Flask的基础知识来学习Python进阶知识。</p>
+        <h1 id="Flask中的用户管理"><a href="#Flask中的用户管理" class="headerlink" title="Flask中的用户管理"></a>Flask中的用户管理</h1><h2 id="用户模型的定义"><a href="#用户模型的定义" class="headerlink" title="用户模型的定义"></a>用户模型的定义</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">User</span>(<span class="type">UserMixin</span>, <span class="type">Base</span>):</span></span><br><span class="line"><span class="class">    id = <span class="type">Column</span>(<span class="type">Integer</span>, <span class="title">primary_key</span>=<span class="type">True</span>)</span></span><br><span class="line"><span class="class">    nickname = <span class="type">Column</span>(<span class="type">String(24)</span>, <span class="title">nullable</span>=<span class="type">False</span>)</span></span><br><span class="line"><span class="class">    phone_number = <span class="type">Column</span>(<span class="type">String(18)</span>, <span class="title">unique</span>=<span class="type">True</span>)</span></span><br><span class="line"><span class="class">    _password = <span class="type">Column</span>('<span class="title">password'</span>, <span class="type">String</span>(<span class="title">length</span>=128), nullable=<span class="type">False</span>)</span></span><br><span class="line"><span class="class">    email = <span class="type">Column</span>(<span class="type">String(50)</span>, <span class="title">unique</span>=<span class="type">True</span>, <span class="title">nullable</span>=<span class="type">False</span>)</span></span><br><span class="line"><span class="class">    confirmed = <span class="type">Column</span>(<span class="type">Boolean</span>, <span class="title">default</span>=<span class="type">False</span>)</span></span><br><span class="line"><span class="class">    beans = <span class="type">Column</span>(<span class="type">Float</span>, <span class="title">default</span>=0)</span></span><br><span class="line"><span class="class">    send_counter = <span class="type">Column</span>(<span class="type">Integer</span>, <span class="title">default</span>=0)</span></span><br><span class="line"><span class="class">    receive_counter = <span class="type">Column</span>(<span class="type">Integer</span>, <span class="title">default</span>=0)</span></span><br><span class="line"><span class="class">    wx_open_id = <span class="type">Column</span>(<span class="type">String(50)</span>)</span></span><br><span class="line"><span class="class">    wx_name = <span class="type">Column</span>(<span class="type">String(32)</span>)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    # 对数据进行预处理</span></span><br><span class="line"><span class="class">    # 还可以对数据做只读只写的限制</span></span><br><span class="line"><span class="class">    @property</span></span><br><span class="line"><span class="class">    def password(<span class="title">self</span>):</span></span><br><span class="line"><span class="class">        return self._password</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    @password.setter</span></span><br><span class="line"><span class="class">    def password(<span class="title">self</span>, <span class="title">raw</span>):</span></span><br><span class="line"><span class="class">        self._password = generate_password_hash(<span class="title">raw</span>)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    def check_password(<span class="title">self</span>, <span class="title">raw</span>):</span></span><br><span class="line"><span class="class">        return check_password_hash(<span class="title">self</span>.<span class="title">_password</span>, <span class="title">raw</span>)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> 简单的就不说了，我们看到上面的代码，应该对下面几点有一些疑问。</p>
 </blockquote>
-<h2 id="使用pipenv"><a href="#使用pipenv" class="headerlink" title="使用pipenv"></a>使用pipenv</h2><blockquote>
-<p> 使用pipenv创建虚拟环境<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> pipenv</span><br></pre></td></tr></table></figure></p>
+<h3 id="两个password函数"><a href="#两个password函数" class="headerlink" title="两个password函数"></a>两个password函数</h3><blockquote>
+<p> 这里两个函数是为了处理密码字段，我们知道我们在数据库中储存的密码数据都是加密后的，我们对用户提交的数据分装时可能会使用下面的代码将form对象映射成User对象<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">user = User()</span><br><span class="line">user.set_attrs(form.data)</span><br><span class="line">=====================</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_attrs</span><span class="params">(<span class="keyword">self</span>, attrs_dict)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">for</span> key, value <span class="keyword">in</span> attrs_dict.items()<span class="symbol">:</span></span><br><span class="line">            <span class="keyword">if</span> hasattr(<span class="keyword">self</span>, key) <span class="keyword">and</span> key != <span class="string">'id'</span><span class="symbol">:</span></span><br><span class="line">                setattr(<span class="keyword">self</span>, key, value)</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p> 在自己的项目目录下创建虚拟环境，这个虚拟环境和项目是绑定的<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv <span class="keyword">install</span></span><br></pre></td></tr></table></figure></p>
+<p> 这个set_attrs函数我们放在所有对象都继承了的Base类中，这个类可以存储一些共有字段和方法。<br>上面的set_attrs也会将密码字段映射过去，但我们需要的是加密后的密码，所有我们使用@property构造一个password字段，并使用 @password.setter限制它的赋值，这样我们就将加密操作直接封装了，调用者看不到任何痕迹。</p>
 </blockquote>
-<p><strong>我执行上面的命令时报错了，好像是字符编码的问题，查询了一下，执行下面的2个命令就可以解决。</strong><br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">LANG</span>=en_US.UTF-8</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">LC_ALL</span>=en_US.UTF-8</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p> 创建完虚拟环境后，我们需要的是启动虚拟环境<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv <span class="keyword">shell</span><span class="bash"></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="check-password函数"><a href="#check-password函数" class="headerlink" title="check_password函数"></a>check_password函数</h3><blockquote>
+<p> 这个函数判断传入的密码加密后是否和原对象的密码相同，这属于方法的封装，我们要注意要把User对象应该有的方法都封装进来。</p>
 </blockquote>
-<blockquote>
-<p> 这里虚拟环境的主要作用是区分开项目的环境，每个项目版本、使用的包可能都不一样，区分开来更加方便。<br>安装flask<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv <span class="keyword">install</span> flask</span><br></pre></td></tr></table></figure></p>
+<h3 id="UserMixin"><a href="#UserMixin" class="headerlink" title="UserMixin"></a>UserMixin</h3><blockquote>
+<p> 这个会在用户权限管理插件里讲。</p>
 </blockquote>
-<blockquote>
-<p> 退出虚拟环境<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="超级强大的用户权限管理插件flask-login"><a href="#超级强大的用户权限管理插件flask-login" class="headerlink" title="超级强大的用户权限管理插件flask_login"></a>超级强大的用户权限管理插件flask_login</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv <span class="keyword">install</span> falsk_login</span><br></pre></td></tr></table></figure>
+<h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 主文件</span><br><span class="line">login_manager = LoginManager()</span><br><span class="line">...</span><br><span class="line"> login_manager.init_app(app)</span><br><span class="line">login_manager.login_view = <span class="string">'web.login'</span> # 告诉插件我们登录的视图函数,未授权时会自动跳转到该界面，并flash一条消息</span><br><span class="line">login_manager.login_message = <span class="string">'请先登录或注册'</span> # 在跳转后的url中有next指向前一个页面，可以在login中编写逻辑</span><br></pre></td></tr></table></figure>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><blockquote>
+<p>我们在使用时只需使用<code>login_user(user, remember=True)</code>就可以保存用户的信息在cookie中，具体时间需要修改配置项，默认是365天，remember=True设定了cookie不是关闭浏览器就失效。<br>这里插件如何知道要把User的什么值储存在cookie中呢？这就要用到我们上面没有解释的UserMixin，它帮我们实现了如get_id函数等方法，使插件可以获取能表示用户身份的参数，但是要只有UserMixin中默认的参数是id，但是如果不是用id表示身份，就需要重写get_id()方法<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_id</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">self</span>.myId</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<blockquote>
-<p> 查看包的依赖关系<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">pipenv graph</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p> 在虚拟环境下执行下面的命令，可以找到当前虚拟环境的目录<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv <span class="comment">--venv</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="限制未登录的用户访问"><a href="#限制未登录的用户访问" class="headerlink" title="限制未登录的用户访问"></a>限制未登录的用户访问</h3><blockquote>
+<p> 我们只需在对应的路由函数上加上@login_required就可以了<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@web</span>.route(<span class="string">'/my/gifts'</span>)</span><br><span class="line"><span class="variable">@login_required</span> </span><br><span class="line">def my_gifts():</span><br><span class="line">    return <span class="string">'My Gifts'</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>创建一个简单的Flask项目，下面是最简单的Flask代码，就是下面简单的代码，我们就能运行起我们的Web服务。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)  <span class="comment"># 实例化Flask对象</span></span><br><span class="line"><span class="meta">@app.route('/hello')  #  定义一个视图函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line"><span class="keyword">return</span> <span class="string">"Hello, wsd"</span></span><br><span class="line"> app.run()  <span class="comment"># 启动web服务器</span></span><br></pre></td></tr></table></figure></p>
+<p>这里要让框架起作用还要告诉框架如何查询对应的用户（这时Cookie中只有id，框架要判断存不存在这样的用户呀，毕竟cookie是可以修改的）<br>  还需要编写一个函数，在User对象中导入<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> login_manager</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p> 可以调试模式，修改代码就可以自动重启服务器，同时可以显示详细的异常信息<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="builtin-name">run</span>(<span class="attribute">debug</span>=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></p>
+<p> 并在与User类平级上创建函数<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span>(...)</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">@login_manager.user_loader</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_user</span><span class="params">(uid)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">return</span> User.query.get(int(uid))</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p> 在介绍另一种路由注册方式，比较而言第一种更加方便。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line"><span class="comment"># 基于类的视图（即插视图）=\&gt; 不是重点</span></span><br><span class="line"><span class="keyword">return</span> <span class="string">"Hello, wsd"</span></span><br><span class="line">app.add_url_rule(<span class="string">'/hello'</span>, view_func=hello)</span><br></pre></td></tr></table></figure></p>
+<p> 上述方法指定了如何判断用户是否存在<br> 这时未登录的用户访问gift页面就会跳转到登录页面（前面有设定），我们还要在用户登录后再跳转到用户最开始访问的页面呀，框架也帮我们想好了，他会在登录页面后加上next=…，带上开始访问的地址，我们只需要<code>next = request.args.get(&#39;next&#39;)</code>就可以在用户登录后获取到这个地址，请注意这个地方存在重定向攻击的风险，我们需要判断next后的地址不会跳转到奇怪的地方。<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">next</span> = request.args.<span class="keyword">get</span>(<span class="comment">'next')</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">next</span> <span class="keyword">or</span> <span class="keyword">not</span> <span class="keyword">next</span>.startswith(<span class="comment">'/'):</span></span><br><span class="line">    <span class="keyword">next</span> = url_for(<span class="comment">'web.index')</span></span><br><span class="line"><span class="keyword">return</span> redirect(<span class="keyword">next</span>)</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<blockquote>
-<p>在这里有一个想问题，我们写Python代码时经常会写下面的代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>: </span><br><span class="line">app.run(host=<span class="string">'0.0.0.0'</span>, debug=app.config[<span class="string">'DEBUG'</span>]())  <span class="comment"># 启动web服务器</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h2><blockquote>
+<p> Flask中的表单算是比较简单的了，我们简单的介绍一下</p>
 </blockquote>
+<h3 id="表单模型的构建"><a href="#表单模型的构建" class="headerlink" title="表单模型的构建"></a>表单模型的构建</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RegisterForm</span><span class="params">(Form)</span>:</span></span><br><span class="line">    email = StringField(validators=[DataRequired(), Length(<span class="number">8</span>, <span class="number">64</span>),</span><br><span class="line">                                    Email(message=<span class="string">'电子邮箱不符合规范'</span>)])</span><br><span class="line"></span><br><span class="line">    password = PasswordField(validators=[</span><br><span class="line">        DataRequired(message=<span class="string">'密码不可以为空，请输入你的密码'</span>), Length(<span class="number">6</span>, <span class="number">32</span>)</span><br><span class="line">    ])</span><br><span class="line"></span><br><span class="line">    nickname = StringField(validators=[</span><br><span class="line">        DataRequired(), Length(<span class="number">2</span>, <span class="number">10</span>, message=<span class="string">'昵称至少需要两个字符，最多10个字符'</span>)</span><br><span class="line">    ])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validate_email</span><span class="params">(self, field)</span>:</span>  <span class="comment"># wtf会对 validate_后的字段自动校验</span></span><br><span class="line">        <span class="comment"># db.session</span></span><br><span class="line">        <span class="keyword">if</span> User.query.filter_by(email=field.data).first():</span><br><span class="line">            <span class="keyword">raise</span> ValidationError(<span class="string">'电子邮件已被注册'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validate_nickname</span><span class="params">(self, field)</span>:</span>  <span class="comment"># wtf会对 validate_后的字段自动校验</span></span><br><span class="line">        <span class="comment"># db.session</span></span><br><span class="line">        <span class="keyword">if</span> User.query.filter_by(nickname=field.data).first():</span><br><span class="line">            <span class="keyword">raise</span> ValidationError(<span class="string">'昵称已经存在'</span>)</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>这里为什么要写<strong> if <strong>name</strong> == ‘<strong>main</strong>’</strong>呢？<br>在一般的Python代码里，原因是确保if内的语句只在当前文件作为入口文件时执行，不会在其他模块导入时执行<br>而在Flask项目中，除了上面的原因，还因为Python Web项目的生产环境一般为nginx + uwsgi, if下面的语句是启用了一个Flask自带的服务器，在生产环境下不会启动自带的服务器，如果没有if判断生产环境下就会执行下面的语句，就会启动flask默认的服务器</p>
+<p> 要注意后面的几个方法，框架会自动检测validate_后的值，在这里我们可以查询数据库等操作。</p>
+</blockquote>
+<h3 id="简单的使用"><a href="#简单的使用" class="headerlink" title="简单的使用"></a>简单的使用</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">form</span> = RegisterForm(request.<span class="keyword">form</span>)</span><br><span class="line"><span class="keyword">if</span> request.method == '<span class="keyword">POST</span>' and <span class="keyword">form</span>.validate():</span><br><span class="line">    user = User()</span><br><span class="line">    user.set_attrs(<span class="keyword">form</span>.data)</span><br><span class="line">    <span class="keyword">db</span>.session.add(user)</span><br><span class="line">    <span class="keyword">db</span>.session.commit()</span><br><span class="line">    redirect(url_for('web.login'))  # 接收end_point</span><br><span class="line"><span class="keyword">return</span> render_template('auth/register.html', <span class="keyword">form</span>=<span class="keyword">form</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> Flask中的<a href="http://www.pythondoc.com/flask-sqlalchemy/" target="_blank" rel="noopener">数据库查询操作</a>可以简单了解一下。</p>
 </blockquote>
 
         
@@ -553,21 +557,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/04/02/Flask学习与Python进阶-2-With语句详解/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/03/30/移动端访问我的博客/" id="post_nav-older" class="next-content">
+        <a href="/2018/04/11/Flask学习与Python进阶-5-页面与用户/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
