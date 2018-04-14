@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Flask学习与Python进阶-7-两个常见问题解决方案]]></title>
+    <url>%2F2018%2F04%2F14%2FFlask%E5%AD%A6%E4%B9%A0%E4%B8%8EPython%E8%BF%9B%E9%98%B6-7-%E4%B8%A4%E4%B8%AA%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
+    <content type="text"><![CDATA[两个常见问题解决方案一、提交数据与回滚 在我们写数据处理代码时，常常会需要try…catch一段代码，如果出现异常就回滚，重复的代码都是我们需要避免的，这时我们就可以想到我们在前面讲with语句时，它就可以在执行with语句中代码前后执行一段代码，with中是执行2个方法，这里我们不需要这样，我们可以使用@contextmanager来达到相同的相关，先来看下面一段代码：12345678910111213141516171819from contextlib import contextmanagerclass MyResource: def query(self): print('query data')@contextmanagerdef make_myresource(): print('connect to resource') yield MyResource() print('close resource connection')with make_myresource() as myresource: myresource.query()==================connect to resourcequery dataclose resource connection 我们做到了在前后执行操作的要求，再让我们看一段代码123456789101112from contextlib import contextmanager@contextmanagerdef book_mark(): print('《', end='') yield print('》', end='')with book_mark(): print('三体', end='')==================《三体》 这段代码更简单，但是它通过实现了相同的效果由上面的代码，我们可以对Flask中的ORM管理器SQLAlchemy做一个修改1234567891011from flask_sqlalchemy import SQLAlchemy as _SQLAlchemyclass SQLAlchemy(_SQLAlchemy): @contextmanager def auto_commit(self): try: yield self.session.commit() except Exception as e: self.session.rollback() raise e 使用时很简单，就可以做到自动提交和回滚123456with db.auto_commit(): gift = Gift() gift.isbn = isbn gift.uid = current_user.id current_user.beans += current_app.config['BEANS_UPLOAD_ONE_BOOK'] db.session.add(gift) 二、对方法的重写，减少重复代码 在数据库查询中，常常有些字段一直为一种情况（如用户是否删除），这时我们常常需要在每个查询语句里写上相同的查询条件，我们可以将ORM中查询方法重写，加上这个条件，我们调用时就不用相同语句了。123456class Query(BaseQuery): def filter_by(self, **kwargs): if 'status' not in kwargs.keys(): kwargs['status'] = 1 return super(Query, self).filter_by(**kwargs)db = SQLAlchemy(query_class=Query) 上面代码就重写了查询对象中的filter_by函数，在函数中加上status为1的条件，我们调用时就不需要写这个字段了。1Gift.query.filter_by(isbn=isbn, launched=False).all()]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Flask</category>
+      </categories>
+  </entry>
+  <entry>
     <title></title>
-    <url>%2F2018%2F04%2F11%2Fconfigs%2Fsorts%2F</url>
-    <content type="text"><![CDATA[{"":["flask学习与python进阶-5-用户管理.md","flask学习与python进阶-5-页面与用户.md","flask学习与python进阶_1.md","机器学习系列-1-什么是机器学习.md","flask学习与python进阶-4-面向对象.md","flask学习与python进阶-3-进程与线程.md","flask学习与python进阶-2-with语句详解.md","移动端访问我的博客.md","一些想法.md"],"__positions":{"flask学习与python进阶-3-进程与线程.md":6,"flask学习与python进阶_1.md":3,"flask学习与python进阶-2-with语句详解.md":7,"flask学习与python进阶-5-页面与用户.md":2,"flask学习与python进阶-5-用户管理.md":1,"flask学习与python进阶-4-面向对象.md":5,"移动端访问我的博客.md":8,"一些想法.md":9,"机器学习系列-1-什么是机器学习.md":4},"__raw_positions":{"flask学习与python进阶-3-进程与线程.md":6,"flask学习与python进阶_1.md":3,"flask学习与python进阶-2-with语句详解.md":7,"flask学习与python进阶-5-页面与用户.md":2,"flask学习与python进阶-5-用户管理.md":1,"机器学习系列-1-什么是机器学习.md":4,"移动端访问我的博客.md":8,"一些想法.md":9,"flask学习与python进阶-4-面向对象.md":5}}]]></content>
+    <url>%2F2018%2F04%2F12%2Fconfigs%2Fsorts%2F</url>
+    <content type="text"><![CDATA[{"":["flask学习与python进阶-7-两个常见问题解决方案.md","python基础进阶.md","flask学习与python进阶-5-用户管理.md","flask学习与python进阶-5-页面与用户.md","flask学习与python进阶_1.md","机器学习系列-1-什么是机器学习.md","flask学习与python进阶-4-面向对象.md","flask学习与python进阶-3-进程与线程.md","flask学习与python进阶-2-with语句详解.md","移动端访问我的博客.md","一些想法.md","flask学习与python进阶-7-两个常见问题解决方案","python基础进阶","flask学习与python进阶-5-用户管理","flask学习与python进阶-5-页面与用户","机器学习系列-1-什么是机器学习","flask学习与python进阶-4-面向对象","移动端访问我的博客","flask学习与python进阶-3-进程与线程","flask学习与python进阶-2-with语句详解","flask学习与python进阶_1"],"__positions":{"flask学习与python进阶-3-进程与线程.md":8,"flask学习与python进阶_1.md":5,"flask学习与python进阶-3-进程与线程":19,"flask学习与python进阶-7-两个常见问题解决方案.md":1,"flask学习与python进阶-5-页面与用户":15,"flask学习与python进阶-4-面向对象":17,"机器学习系列-1-什么是机器学习":16,"python基础进阶.md":2,"flask学习与python进阶-2-with语句详解.md":9,"flask学习与python进阶-5-用户管理":14,"flask学习与python进阶-5-页面与用户.md":4,"flask学习与python进阶-5-用户管理.md":3,"机器学习系列-1-什么是机器学习.md":6,"flask学习与python进阶-7-两个常见问题解决方案":12,"flask学习与python进阶_1":21,"移动端访问我的博客.md":10,"python基础进阶":13,"一些想法.md":11,"flask学习与python进阶-2-with语句详解":20,"移动端访问我的博客":18,"flask学习与python进阶-4-面向对象.md":7},"__raw_positions":{"flask学习与python进阶_1":21,"flask学习与python进阶-3-进程与线程.md":8,"flask学习与python进阶_1.md":5,"flask学习与python进阶-3-进程与线程":19,"flask学习与python进阶-7-两个常见问题解决方案.md":1,"flask学习与python进阶-5-页面与用户":15,"机器学习系列-1-什么是机器学习":16,"python基础进阶.md":2,"flask学习与python进阶-2-with语句详解.md":9,"移动端访问我的博客":18,"flask学习与python进阶-5-页面与用户.md":4,"flask学习与python进阶-5-用户管理.md":3,"flask学习与python进阶-4-面向对象.md":7,"flask学习与python进阶-7-两个常见问题解决方案":12,"flask学习与python进阶-2-with语句详解":20,"flask学习与python进阶-5-用户管理":14,"移动端访问我的博客.md":10,"一些想法.md":11,"flask学习与python进阶-4-面向对象":17,"python基础进阶":13,"机器学习系列-1-什么是机器学习.md":6}}]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Python基础进阶]]></title>
+    <url>%2F2018%2F04%2F12%2FPython%E5%9F%BA%E7%A1%80%E8%BF%9B%E9%98%B6%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Python</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Flask学习与Python进阶-6-用户管理]]></title>
@@ -85,6 +102,11 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[timeline]]></title>
+    <url>%2Ftimeline%2Findex.html</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[关于我]]></title>
     <url>%2Fabout%2Findex.html</url>
     <content type="text"><![CDATA[写一些自己的想法 现在在西安读研究生，希望能总结下自己的学习内容。 可以访问我的邮箱:wwg377655460@126.comQQ:377655460希望可以多多交流。]]></content>
@@ -92,11 +114,6 @@
   <entry>
     <title><![CDATA[categories]]></title>
     <url>%2Fcategories%2Findex.html</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[timeline]]></title>
-    <url>%2Ftimeline%2Findex.html</url>
     <content type="text"></content>
   </entry>
 </search>

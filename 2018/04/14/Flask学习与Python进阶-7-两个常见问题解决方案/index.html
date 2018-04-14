@@ -43,7 +43,7 @@
     
     <title>
         
-            categories | 
+            Flask学习与Python进阶-7-两个常见问题解决方案 | 
         
         Wsdevotion&#39;s Bolg
     </title>
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Wsdevotion&#39;s Bolg">
-    <meta name="msapplication-starturl" content="http://wwg377655460.github.io/categories/">
+    <meta name="msapplication-starturl" content="http://wwg377655460.github.io/2018/04/14/Flask学习与Python进阶-7-两个常见问题解决方案/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Wsdevotion&#39;s Bolg">
@@ -230,13 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://wwg377655460.github.io/categories/">
+    <meta property="og:url" content="http://wwg377655460.github.io/2018/04/14/Flask学习与Python进阶-7-两个常见问题解决方案/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="categories | Wsdevotion&#39;s Bolg">
+    <meta property="og:title" content="Flask学习与Python进阶-7-两个常见问题解决方案 | Wsdevotion&#39;s Bolg">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     
 
+    
+        <meta property="article:published_time" content="Sat Apr 14 2018 14:58:57 GMT+0800">
+        <meta property="article:modified_time" content="Sat Apr 14 2018 15:17:12 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -244,13 +247,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://wwg377655460.github.io/categories/index.html" />
+        <link rel="canonical" href="http://wwg377655460.github.io/2018/04/14/Flask学习与Python进阶-7-两个常见问题解决方案/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://wwg377655460.github.io/2018/04/14/Flask学习与Python进阶-7-两个常见问题解决方案/index.html",
+    "headline": "Flask学习与Python进阶-7-两个常见问题解决方案",
+    "datePublished": "Sat Apr 14 2018 14:58:57 GMT+0800",
+    "dateModified": "Sat Apr 14 2018 15:17:12 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "wsdevotion",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "编程也是一种艺术"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wsdevotion&#39;s Bolg",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -286,6 +319,39 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#两个常见问题解决方案"><span class="post-toc-number">1.</span> <span class="post-toc-text">两个常见问题解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、提交数据与回滚"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、提交数据与回滚</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、对方法的重写，减少重复代码"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">二、对方法的重写，减少重复代码</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
@@ -312,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                categories
+                Flask学习与Python进阶-7-两个常见问题解决方案
             </p>
         </div>
 
@@ -331,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>wsdevotion</strong>
-        <span>3月 31, 2018</span>
+        <span>4月 14, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -353,7 +419,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYUlEQVR42u3aQW7DMAwEwPz/0+0Dihi7lKw4xegUFI7D8cFkSb5+/vV54eHh4eHh4eHhPYz3is/fb9U/XP7WMDY8PDy8I7wkrBXM3/tch7gSGx4eHt5J3vUL+l3Q7655+/Oj9JPEhoeHh/dk3ixtJAmgTSR4eHh438KbnSQ9PCjv4eHh4W1qRqw3F1bK8dt7LXh4eHgxrx1Knfx8dL6Hh4eHF/BmY61Z8shTyLalKzw8PLwbePmLOFkRaIvmfPmgiAcPDw/vAbxZenjXgGjXUpO74eHh4Z3n5WOq9u97H9N1OxgPDw/vDK8dX7UJIGfvamHg4eHhneHNXsorgSYNiCQJ4eHh4Z3nzRZG82TQPrjronnDZgQeHh7eMi9pCuRN1br8DR5ZXfrj4eHh3cxrV6BmKaQdtrUrqnh4eHgnefnt2nF+XmrPyutodQAPDw/vBt5s6SpvBK+0GPKEgYeHh/cp3mwclTcU2tWrtmTHw8PDO8Nr2w2zpkMb9Cwl4OHh4Z3htaOm5PoEkz+OutGMh4eHd5DXlrazBYL8weXJCQ8PD+9TvNlNZ02HZKg2TFF4eHh4B3lt6dwGkV9/43wPDw8P7zZe2yyYpYTZAsHmZgQeHh5eyWtPXv7ubdQWBT0eHh7ezbxXfFaaBbOE0a694uHh4Z3k5clgfXCVP7hhCxgPDw/vIG/9FZ+/vvMYNi9d4eHh4X2Ul4/B2tDbURkeHh7ed/FWEkO+KFD8A4CHh4d3kDcbeuXfui7Bd60R4OHh4Z3hzYrdPCWst3rzJIGHh4d3N+//HTw8PDw8PDw8vAecX3ZlFhH/IvvSAAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEH0lEQVR42u3aS3LbMBAFQN//0skBHNHvzdApEWqsVBJFAs0F5oOvP0YwvhBgwoQJEyZMBiZMmDC9PdNXPP5xo2+/fv/8/b+vvrm+Mvl8/d92jZgwYcKE6SSmH7bGYCrXiNcQySuZAW3WiAkTJkyYzmN6Nd3kms1mfw2XBATXfO0aMWHChAkTpnbzbn+dhQttQo4JEyZMmDDlCWeRUo7GdXixf82YMGHChOkTmPLSat623LQh89dwV/CBCRMmTJhOZWq35Cd+/q/nmzBhwoQJ09swtaM9jtOWa2fHZDchxcuVYsKECROmI5jyjXPWsJxt0rO09i56TJgwYcJ0ElPbsJwdS01ChE1pOHl5+RwwYcKECdN5TPmGnUy93dRz7tlmPzwGhAkTJkyYjmAqUsEyyZy9gFnyvAkIigoBJkyYMGF6LFObss5aiXcFHNfXtKXnl2vBhAkTJkwHMW0OgLbhRRuC5Ens/oVhwoQJE6bzmGabZdQODH7Nv9mUevNjtZgwYcKE6Wyme7FyxHw+mwJxnkhjwoQJE6bzmJI0Mm8HtkdkkjQ7386T+UfQmDBhwoTpA5j2hdoEJVnSLNFNUuuiyIsJEyZMmB7ItElcZ43MpGibkOXp9A1FXkyYMGHC9FimNjWdHbtpG5Obxd9WXMaECRMmTAcxbR6fY20Kr5vntsEKJkyYMGE6jylvPe43+PoAzbqZOuPDhAkTJkwnMbUNzk3L8/oORWpa3rMtNGPChAkTppOYZinijG+2ne9T2Ta8wIQJEyZMZzBtyq/tNbNS8mbjb3ExYcKECdN5TLP0sp1oXWAtk+HZHeq4CRMmTJgwPZZpv9T2PrP0+IeFxbOKkmdMmDBhwnQoU7KA2ZGats2ZH8TZhyx1QIAJEyZMmB7ClABtCq9tKtu+nnzm+TeYMGHChOlUpqTwmiwyn8qs+JsnzG0LExMmTJgwncfUbrTJUpNfZ4dyNgR5yIIJEyZMmD6BaTat9mDorPWYj/wpw4AAEyZMmDC9PVPbJmy3599IevPma14IxoQJEyZMZzPlBdBkSe2Rnbbx2YYdebiDCRMmTJjOY9qURPO24maTThbWMkXfY8KECROmg5jy5LM9rDNrgrYF3Lwdm79UTJgwYcJ0BlPbYpxNqG1Sbq7ctEIxYcKECdN5TO3IJzRLm2fl4839MWHChAnT2UyzzXL44HWS3AYZ1/f/YV2YMGHChOkgpt9obW6O12zKxL8YEGDChAkTpoczbTbsdtKzhmUyzzbEwYQJEyZMmGbLLo7ILF5MS3nDwR1MmDBhwvQxTHlBNuHOy8RJ2bd9YlHkxYQJEyZMj2XabLfJpGdBwL0Hg4oZYsKECROmg5hmJdEWYnbNrJTcHifChAkTJkynMhlRQGBgwoQJEyZMmAxMmDC9y/gLNH7OrhvNbX0AAAAASUVORK5CYII=">
     
 </ul>
 
@@ -375,7 +441,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=categories&url=http://wwg377655460.github.io/categories/index.html&pic=http://wwg377655460.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Flask学习与Python进阶-7-两个常见问题解决方案&url=http://wwg377655460.github.io/2018/04/14/Flask学习与Python进阶-7-两个常见问题解决方案/index.html&pic=http://wwg377655460.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -384,7 +450,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=categories&url=http://wwg377655460.github.io/categories/index.html&via=wsdevotion" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Flask学习与Python进阶-7-两个常见问题解决方案&url=http://wwg377655460.github.io/2018/04/14/Flask学习与Python进阶-7-两个常见问题解决方案/index.html&via=wsdevotion" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -393,7 +459,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wwg377655460.github.io/categories/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wwg377655460.github.io/2018/04/14/Flask学习与Python进阶-7-两个常见问题解决方案/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -402,7 +468,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://wwg377655460.github.io/categories/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://wwg377655460.github.io/2018/04/14/Flask学习与Python进阶-7-两个常见问题解决方案/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -427,7 +493,25 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <h1 id="两个常见问题解决方案"><a href="#两个常见问题解决方案" class="headerlink" title="两个常见问题解决方案"></a>两个常见问题解决方案</h1><h2 id="一、提交数据与回滚"><a href="#一、提交数据与回滚" class="headerlink" title="一、提交数据与回滚"></a>一、提交数据与回滚</h2><blockquote>
+<p> 在我们写数据处理代码时，常常会需要try…catch一段代码，如果出现异常就回滚，重复的代码都是我们需要避免的，这时我们就可以想到我们在前面讲with语句时，它就可以在执行with语句中代码前后执行一段代码，with中是执行2个方法，这里我们不需要这样，我们可以使用@contextmanager来达到相同的相关，先来看下面一段代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> contextlib <span class="keyword">import</span> contextmanager</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyResource</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">query</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'query data'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_myresource</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'connect to resource'</span>)</span><br><span class="line">    <span class="keyword">yield</span> MyResource()</span><br><span class="line">    print(<span class="string">'close resource connection'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> make_myresource() <span class="keyword">as</span> myresource:</span><br><span class="line">    myresource.query()</span><br><span class="line">==================</span><br><span class="line">connect to resource</span><br><span class="line">query data</span><br><span class="line">close resource connection</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 我们做到了在前后执行操作的要求，再让我们看一段代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> contextlib <span class="keyword">import</span> contextmanager</span><br><span class="line"></span><br><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">book_mark</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'《'</span>, end=<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">yield</span></span><br><span class="line">    print(<span class="string">'》'</span>, end=<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> book_mark():</span><br><span class="line">    print(<span class="string">'三体'</span>, end=<span class="string">''</span>)</span><br><span class="line">==================</span><br><span class="line">《三体》</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 这段代码更简单，但是它通过实现了相同的效果<br>由上面的代码，我们可以对Flask中的ORM管理器SQLAlchemy做一个修改<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask_sqlalchemy <span class="keyword">import</span> SQLAlchemy <span class="keyword">as</span> _SQLAlchemy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SQLAlchemy</span><span class="params">(_SQLAlchemy)</span>:</span></span><br><span class="line"><span class="meta">    @contextmanager</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">auto_commit</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">yield</span></span><br><span class="line">            self.session.commit()</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            self.session.rollback()</span><br><span class="line">            <span class="keyword">raise</span> e</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 使用时很简单，就可以做到自动提交和回滚<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">with db.auto_commit():</span><br><span class="line">    gift = Gift()</span><br><span class="line">    gift<span class="selector-class">.isbn</span> = isbn</span><br><span class="line">    gift<span class="selector-class">.uid</span> = current_user.id</span><br><span class="line">    current_user<span class="selector-class">.beans</span> += current_app<span class="selector-class">.config</span>[<span class="string">'BEANS_UPLOAD_ONE_BOOK'</span>]</span><br><span class="line">    db<span class="selector-class">.session</span><span class="selector-class">.add</span>(gift)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="二、对方法的重写，减少重复代码"><a href="#二、对方法的重写，减少重复代码" class="headerlink" title="二、对方法的重写，减少重复代码"></a>二、对方法的重写，减少重复代码</h2><blockquote>
+<p> 在数据库查询中，常常有些字段一直为一种情况（如用户是否删除），这时我们常常需要在每个查询语句里写上相同的查询条件，我们可以将ORM中查询方法重写，加上这个条件，我们调用时就不用相同语句了。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Query</span>(<span class="title">BaseQuery</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">filter_by</span><span class="params">(<span class="keyword">self</span>, **kwargs)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="string">'status'</span> <span class="keyword">not</span> <span class="keyword">in</span> kwargs.keys()<span class="symbol">:</span></span><br><span class="line">            kwargs[<span class="string">'status'</span>] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>(Query, <span class="keyword">self</span>).filter_by(**kwargs)</span><br><span class="line">db = SQLAlchemy(query_class=Query)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 上面代码就重写了查询对象中的filter_by函数，在函数中加上status为1的条件，我们调用时就不需要写这个字段了。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Gift.query.filter_by(<span class="attribute">isbn</span>=isbn, <span class="attribute">launched</span>=<span class="literal">False</span>).all()</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
         
     
 
@@ -452,6 +536,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/04/12/configs/sorts/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -639,6 +731,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
